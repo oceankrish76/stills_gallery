@@ -10,11 +10,13 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    @photo_attachments = @photo.photo_attachments.all
   end
 
   # GET /photos/new
   def new
     @photo = Photo.new
+    @photo_attachment = @photo.photo_attachments.build
   end
 
   # GET /photos/1/edit
@@ -28,6 +30,9 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
+       params[:photo_attachments]['avatar'].each do |a|
+          @photo_attachment = @photo.photo_attachments.create!(:avatar => a, :photo_id => @photo.id)
+       end
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
         format.json { render :show, status: :created, location: @photo }
       else
@@ -69,6 +74,7 @@ class PhotosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def photo_params
-      params.require(:photo).permit(:title, :description, :image_file_name, :image_content_type, :image_file_size, :author)
+      params.require(:photo).permit(:title, :description, :image_file_name, :image_content_type, :image_file_size, :author, photo_attachments_attributes: 
+  [:id, :photo_id, :avatar])
     end
 end
