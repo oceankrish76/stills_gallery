@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+    <li class="nav-item">
+        <%= link_to('Edit', edit_user_registration_path) %>        
+    </li>
+    <li class="border border-primary">
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class:"login-logout") %>        
+    </li>
+<% else %>
+    <div class="logout">
+    <li class="border border-primary login-link">
+        <%= link_to('Login', new_user_session_path, class:"login-logout") %>  
+    </li>
+    </div>
+<% end %>  
