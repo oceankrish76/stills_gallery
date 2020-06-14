@@ -34,7 +34,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @photo_attachment.avatar.url, alt: "Image") %>
+  <%#= render @photo_attachment, image_tag @photo_attachment.avatar.url, alt: "Image") %>
 </p>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> 

@@ -10,8 +10,6 @@ class PhotoAttachmentsController < ApplicationController
   # GET /photo_attachments/1
   # GET /photo_attachments/1.json
   def show
-    #added by myself
-    @photo_attachment = PhotoAttachment.avatar
   end
 
   # GET /photo_attachments/new

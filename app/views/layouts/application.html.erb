@@ -13,6 +13,9 @@
   <header class="header">
     <nav class="navbar navbar-default" role="navigation">
       <ul class="nav navbar-nav navbar-right">
+      <div class="navbar-header">
+          <%= link_to 'StillsGallery', root_path, class:"navbar-brand" %>
+        </div>
         <li class="nav-item"><%= link_to 'Stills', photos_path %></li>
         <li class="nav-item"><%= link_to 'New photo', new_photo_path %></li>
         <li class="nav-item"><%= link_to 'Attachment', photo_attachments_path %></li>
@@ -21,5 +24,11 @@
   </nav>
   </header>
     <%= yield %>
+    <%#<h4><a href="https://stackoverflow.com/questions/12229868/using-an-instance-variable-in-another-view" target="_blank">instance var</a></h4> %>
+   <footer id="footer" class="py-4 bg-costume text-costume">
+    <div class="container text-center">
+      <small>Copyright &copy; Your Website</small>
+    </div>
+  </footer>
   </body>
 </html>

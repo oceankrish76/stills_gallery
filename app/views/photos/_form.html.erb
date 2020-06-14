@@ -1,5 +1,4 @@
-<div class="jumbotron vertical-center">
-<div class="container conrainer-bg">
+
 <%= form_with(model: photo, local: true) do |form| %>
   <% if photo.errors.any? %>
     <div id="error_explanation">
@@ -54,5 +53,3 @@
     <%= form.submit %>
   </div>
 <% end %>
-</div>
-</div>
