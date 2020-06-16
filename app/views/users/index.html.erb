@@ -1,13 +1,10 @@
-<h1 class="top-title">Users</h1>
-
+<div class="jumbotron vertical-center">
+<div class="container conrainer-bg">
+<h2 class="top-title">Users</h2>
 <table>
   <thead>
     <tr>
-      <th>First Name</th>
-      <th>Lname</th>
-      <th>Location</th>
-      <th>Created At</th>
-      <th>Actions</th>
+      <th>Email</th>
       <th colspan="4s"></th>
     </tr>
   </thead>
@@ -15,9 +12,7 @@
   <tbody class="text-secondary">
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.fname %></td>
-        <td><%= user.lname %></td>
-        <td><%= user.location %></td>
+        <td><%= user.email %></td>
         <td><%= user.created_at %></td>
         <td><%= link_to 'Show', user, class: "btn btn-info" %></td>
         <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-warning" %></td>
@@ -32,4 +27,6 @@
   <div class="span12 text-center">
     <%= link_to 'New User', new_user_path, class:"text-justify top-title btn btn-primary mb-2 text-light" %>
   </div>
+</div>
+</div>
 </div>
