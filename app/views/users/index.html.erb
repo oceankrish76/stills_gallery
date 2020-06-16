@@ -1,0 +1,35 @@
+<h1 class="top-title">Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Lname</th>
+      <th>Location</th>
+      <th>Created At</th>
+      <th>Actions</th>
+      <th colspan="4s"></th>
+    </tr>
+  </thead>
+
+  <tbody class="text-secondary">
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.fname %></td>
+        <td><%= user.lname %></td>
+        <td><%= user.location %></td>
+        <td><%= user.created_at %></td>
+        <td><%= link_to 'Show', user, class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody class="text-secondary">
+</table>
+
+<br>
+<div class="row-fluid">
+  <div class="span12 text-center">
+    <%= link_to 'New User', new_user_path, class:"text-justify top-title btn btn-primary mb-2 text-light" %>
+  </div>
+</div>

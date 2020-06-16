@@ -1,0 +1,18 @@
+<div class="jumbotron vertical-center">
+<div class="container conrainer-bg">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @photo_attachment.photo_id %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @photo_attachment.avatar %>
+</p>
+
+<%= link_to 'Edit', edit_photo_attachment_path(@photo_attachment) %> |
+<%= link_to 'Back', photo_attachments_path %>
+</div>
+</div>

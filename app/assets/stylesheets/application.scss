@@ -34,8 +34,7 @@ a:hover {
     align-items: center;
     position: fixed;
     width: 100%;
-    /* background-color: #d3d3d3; */
-    background-color: #455b98;
+    background-color: #225d90;
 }
 
 ul {
@@ -52,8 +51,35 @@ ul {
 li {
     display: inline-block;
     padding-left: 1em;
+    font-size: calc(0.485rem + 0.52vw);
+}
+
+.navbar ul li {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
 }
 
 .navbar ul li a {
-    color: #e2e2e2;
+    color: #cccfd2;
+}
+
+button,
+[type="submit"] {
+    background-color: #c1d0fd;
+}
+
+.images-view {
+    width: 30%;
+}
+
+.navbar-brand {
+    color: #bbbbbb !important;
+}
+
+.bg-costume {
+    background-color: #d8d8d8;
+}
+
+.text-costume {
+    color: #8c8c8c;
 }
