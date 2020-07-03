@@ -20,6 +20,8 @@
         <td><%= photo_attachment.photo_id %></td>
         <td><%= photo_attachment.avatar %></td>
         <td><%= image_tag photo_attachment.avatar.url, class: "images-view" %></td>
+
+        <td><%= link_to 'Cover', photo_attachment %></td>
         <td><%= link_to 'Show', photo_attachment %></td>
         <td><%= link_to 'Edit', edit_photo_attachment_path(photo_attachment) %></td>
         <td><%= link_to 'Destroy', photo_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
