@@ -25,69 +25,37 @@
         </div>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-primary">Upload</button>
+      <%= link_to 'Upload', new_photo_path, class:"btn btn-primary" %>
+        <%#<button type="button" class="btn btn-primary">Upload</button> %>
       </div>
 
-    <section class="gallery-section">
-      <div id="gallery">
-        <h2>Images from selected album</h2>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="photo photo-type-line">
-              <a href="https://tinyurl.com/ycempqn6" class="photo-hover">
-              <div class="photo-info">
-                <div class="headline">Lorem Ipsum</div>
-                <div class="line"></div>
-                <div class="desc">In some speaking exams you have to talk about photos or pictures. The video and tips below will help you to do really well in this type of speaking exam.</div>
+      
+      <section class="gallery-section">
+        <div id="gallery">
+            <h2>Images from selected album</h2>
+            <div class="row">
+            <% @photo_attachments.each do |photo_attachment| %>
+              <div class="col-md-3">
+                  <div class="photo photo-type-line">
+                    <a href="https://tinyurl.com/ycempqn6" class="photo-hover">
+                        <div class="photo-info">
+                          <div class="headline">Lorem Ipsum</div>
+                          <div class="line"></div>
+                          <div class="desc">In some speaking exams you have to talk about photos or pictures.
+                          </div>
+                        </div>
+                        <div class="mask"></div>
+                    </a>
+                    <div class="photo-img">
+                        <%= image_tag photo_attachment.avatar.url %>
+                    </div>
+                  </div>
               </div>
-              <div class="mask"></div>
-              </a>
-              <div class="photo-img"><img src="https://tinyurl.com/ycempqn6" alt="imge"></div>
+              <% end %>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="photo photo-type-line">
-              <a href="https://tinyurl.com/ycempqn6" class="photo-hover">
-              <div class="photo-info">
-                <div class="headline">Lorem Ipsum</div>
-                <div class="line"></div>
-                <div class="desc">In some speaking exams you have to talk about photos or pictures. The video and tips below will help you to do really well in this type of speaking exam.</div>
-              </div>
-              <div class="mask"></div>
-              </a>
-              <div class="photo-img"><img src="https://tinyurl.com/ycempqn6" alt="imge"></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="photo photo-type-line">
-              <a href="https://tinyurl.com/ycempqn6" class="photo-hover">
-              <div class="photo-info">
-                <div class="headline">Lorem Ipsum</div>
-                <div class="line"></div>
-                <div class="desc">In some speaking exams you have to talk about photos or pictures. The video and tips below will help you to do really well in this type of speaking exam.</div>
-              </div>
-              <div class="mask"></div>
-              </a>
-              <div class="photo-img"><img src="https://tinyurl.com/ycempqn6" alt="imge"></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="photo photo-type-line">
-              <a href="https://tinyurl.com/ycempqn6" class="photo-hover">
-              <div class="photo-info">
-                <div class="headline">Lorem Ipsum</div>
-                <div class="line"></div>
-                <div class="desc">In some speaking exams you have to talk about photos or pictures. The video and tips below will help you to do really well in this type of speaking exam.</div>
-              </div>
-              <div class="mask"></div>
-              </a>
-              <div class="photo-img"><img src="https://tinyurl.com/ycempqn6" alt="imge"></div>
-            </div>
-          </div>
-          
         </div>
-      </div>
-    </section>
+      </section>
+      
 
 
       <%

@@ -6,6 +6,7 @@ gem 'devise'
 #rMagic
 #gem 'rmagick'
 #photos
+gem 'mini_magick'
 gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'

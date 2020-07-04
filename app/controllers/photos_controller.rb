@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = Photo.all
+    @photo_attachments = PhotoAttachment.all
   end
 
   # GET /photos/1
@@ -76,6 +77,6 @@ class PhotosController < ApplicationController
     # Only allow a list of trusted parameters through.
     def photo_params
       params.require(:photo).permit(:title, :description, :image_file_name, :image_content_type, :image_file_size, :author, photo_attachments_attributes: 
-  [:id, :photo_id, :avatar])
+  [:id, :photo_id, :avatar], images: [] )
     end
 end

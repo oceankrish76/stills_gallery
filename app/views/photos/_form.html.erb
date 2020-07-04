@@ -22,7 +22,9 @@
     <%= form.text_area :description, class: "form-control", required: 'required' %>
   </div>
 
-  <div class="form-group">
+<%
+=begin%>
+   <div class="form-group">
     <%= form.label :image_file_name, class: "control-label" %>
     <%= form.text_field :image_file_name, class: "form-control", required: 'required' %>
   </div>
@@ -40,7 +42,9 @@
   <div class="form-group">
     <%= form.label :author, class: "control-label" %>
     <%= form.text_field :author, class: "form-control", required: 'required' %>
-  </div>
+  </div> 
+<%
+=end%>
 
   <%= form.fields_for :photo_attachments do |p| %>
      <div class="field">

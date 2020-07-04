@@ -10,6 +10,8 @@ class PhotoAttachmentsController < ApplicationController
   # GET /photo_attachments/1
   # GET /photo_attachments/1.json
   def show
+      $photo_attachments = @photo.photo_attachments.all
+
   end
 
   # GET /photo_attachments/new
