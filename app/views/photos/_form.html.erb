@@ -46,6 +46,25 @@
 <%
 =end%>
 
+  <div class="control-group">
+    <%= form.label "Choose Album", class:"control-label" %>
+    <div class="controls">
+    <%#= @album_types %>
+    <% @album_types.each do |album_type| %>
+      <%#= form.label :albumname %>
+      <%#= album_type.albumname %>
+      
+      <%#= debug album_type %>
+      <%#= album_type.to_yaml %>
+      <%#= album_type.inspect %>
+      <%#= album_type.all %>
+      <%#= form.select(:album_type_id, options_for_select(album_type.all.collect{|c | [c.albumname, c.id]}, { include_blank: false, selected: form.object.album_type_id })) %>
+      <%= form.select :album_type, options_for_select(album_type.all.collect{|c | [c.albumname, c.id]}) %>
+
+    <% end %>
+    </div>
+  </div>
+
   <%= form.fields_for :photo_attachments do |p| %>
      <div class="field">
        <%= p.label :avatar %><br>

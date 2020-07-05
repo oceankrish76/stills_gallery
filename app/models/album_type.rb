@@ -1,0 +1,3 @@
+class AlbumType < ApplicationRecord
+    
+end

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :album_types do
+    resources :id
+  end
+  # get '/album_types/:id'
   #get '/users/:id', to: 'users#show', as: :user
   devise_for :users, controllers: {
     registrations: 'registrations'

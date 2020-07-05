@@ -2,7 +2,7 @@ class Photo < ApplicationRecord
     validates :title, :description, :image_file_name, :image_content_type, :image_file_size, :author, presence: true
 
     #validates_attachment_content_type :image_content_type, :content_type => %w(image/jpeg image/jpg image/png image/gif)
-     has_many :photo_attachments
+    has_many :photo_attachments
     accepts_nested_attributes_for :photo_attachments
 
     has_many_attached :images

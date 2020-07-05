@@ -29,7 +29,13 @@
         <%#<button type="button" class="btn btn-primary">Upload</button> %>
       </div>
 
-      
+      <ul>
+        <%# @album_types.each_index do |album_type| %>
+          <li><%#= album_type. %></li>
+        <%# end %>
+      </ul>
+      <%#= select "obj", "test", @album_types.each_with_index.map {|name, index| [name,index]} %>
+
       <section class="gallery-section">
         <div id="gallery">
             <h2>Images from selected album</h2>
@@ -55,8 +61,6 @@
             </div>
         </div>
       </section>
-      
-
 
       <%
 =begin%>

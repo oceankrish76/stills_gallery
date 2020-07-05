@@ -1,0 +1,26 @@
+<div class="jumbotron vertical-center">
+<div class="container conrainer-bg">
+<%= form_with(model: album_type, local: true) do |form| %>
+  <% if album_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(album_type.errors.count, "error") %> prohibited this album_type from being saved:</h2>
+
+      <ul>
+        <% album_type.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :albumname %>
+    <%= form.text_field :albumname %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+</div>
