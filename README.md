@@ -43,6 +43,16 @@ Things you may want to cover:
 - 2.7.1 :007 > ActiveRecord::Migration.remove_column :photos, :image_file_name
 - Rails:db:migrate
 
+- rails g migration AddAlbumNameToPhotos album_id:references
+- rails db:rollback
+
 # Comments:
 - Use of helper function
 - https://apidock.com/ruby/Array/each_index 
+
+- rails db:migrate:status
+
+## debugging
+    <%#= debug album_type %>
+    <%#= album_type.to_yaml %>
+    <%#= album_type.inspect %>

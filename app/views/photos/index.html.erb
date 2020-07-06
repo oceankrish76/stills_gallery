@@ -1,114 +1,54 @@
 <div class="jumbotron vertical-center">
-      <div class="container conrainer-bg">
-      <p id="notice"><%= notice %></p>
-      <h2>Photo Albums</h2>
-      <p>Create a photo album of your desire and store your memories.</p>
-      <p><strong>Note:</strong> The cards are displayed vertically on small screens (less than 576px):</p>
-      <div class="card-columns">
-        <div class="card bg-primary">
-          <div class="card-body">
-          <img clss="album-backgrond" src="https://tinyurl.com/yakklsl8" alt="Lake Album" width="100%" height="200px">
-            <p class="card-text text-center">Lekes collection</p>
-          </div>
-        </div>
-        <div class="card bg-warning">
-          <div class="card-body">
-          <img clss="album-backgrond" src="https://tinyurl.com/y89aujop" alt="Car Album" width="100%" height="200px">
-            <p class="card-text text-center">Cars collection</p>
-          </div>
-        </div>
-        <div class="card bg-success">
-          <div class="card-body">
-            <img clss="album-backgrond" src="https://tinyurl.com/ybkrnsd6" alt="Football Album" width="100%" height="200px">
-            <p class="card-text text-center">Football Memories</p>
-          </div>
-        </div>
-      </div>
-      <div class="text-center">
-      <%= link_to 'Upload', new_photo_path, class:"btn btn-primary" %>
-        <%#<button type="button" class="btn btn-primary">Upload</button> %>
-      </div>
+  <div class="container conrainer-bg">
+  <p id="notice"><%= notice %></p>
+  <div class="text-center">
+  <%= link_to 'Add Album', new_album_type_path, class:"btn btn-primary" %>
+    <%#<button type="button" class="btn btn-primary">Upload</button> %>
+  </div>
+  <h2>Photo Albums</h2>
+  <p>Create a photo album of your desire and store your memories.</p>
+  <p><strong>Note:</strong> The cards are displayed vertically on small screens (less than 576px):</p>
 
-      <ul>
-        <%# @album_types.each_index do |album_type| %>
-          <li><%#= album_type. %></li>
-        <%# end %>
-      </ul>
+  <div class="row">
+  <% @album_types.each do |album_type| %>
+  <div class="col-md-4 space-bottom">
+  <div class="card bg-warning">
+      <div class="card-body">
+      <%= link_to album_type_path(album_type), class:"btn btn-warning" do%>
+        <img clss="album-backgrond" src="https://tinyurl.com/y89aujop" alt="Car Album" width="100%" height="200px">
+          <p class="card-text text-center"><%= album_type.albumname %></p>
+      <% end %>
+      </div>
+    </div>
+    </div>
+  <% end %>
+  </div>
       <%#= select "obj", "test", @album_types.each_with_index.map {|name, index| [name,index]} %>
 
-      <section class="gallery-section">
-        <div id="gallery">
-            <h2>Images from selected album</h2>
-            <div class="row">
-            <% @photo_attachments.each do |photo_attachment| %>
-              <div class="col-md-3">
-                  <div class="photo photo-type-line">
-                    <a href="https://tinyurl.com/ycempqn6" class="photo-hover">
-                        <div class="photo-info">
-                          <div class="headline">Lorem Ipsum</div>
-                          <div class="line"></div>
-                          <div class="desc">In some speaking exams you have to talk about photos or pictures.
-                          </div>
-                        </div>
-                        <div class="mask"></div>
-                    </a>
-                    <div class="photo-img">
-                        <%= image_tag photo_attachment.avatar.url %>
+  <section class="gallery-section">
+    <div id="gallery">
+        <h2>Images from selected album</h2>
+        <div class="row">
+        <% @photo_attachments.each do |photo_attachment| %>
+          <div class="col-md-3">
+              <div class="photo photo-type-line">
+                <a href="https://tinyurl.com/ycempqn6" class="photo-hover">
+                    <div class="photo-info">
+                      <div class="headline">Lorem Ipsum</div>
+                      <div class="line"></div>
+                      <div class="desc">In some speaking exams you have to talk about photos or pictures.
+                      </div>
                     </div>
-                  </div>
+                    <div class="mask"></div>
+                </a>
+                <div class="photo-img">
+                    <%= image_tag photo_attachment.avatar.url %>
+                </div>
               </div>
-              <% end %>
-            </div>
-        </div>
-      </section>
-
-      <%
-=begin%>
- card album finishes. 
-<%
-=end%>
-
-<%
-=begin%>
- 
-      <h1>Photos</h1>
-      <div class="tutorial-link">
-      <a href="https://kolosek.com/carrierwave-upload-multiple-images/" target="_blank">Tutorial Link</a>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Image file name</th>
-            <th>Image content type</th>
-            <th>Image file size</th>
-            <th>Author</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @photos.each do |photo| %>
-            <tr>
-              <td><%= photo.title %></td>
-              <td><%= photo.description %></td>
-              <td><%= photo.image_file_name %></td>
-              <td><%= photo.image_content_type %></td>
-              <td><%= photo.image_file_size %></td>
-              <td><%= photo.author %></td>
-              <td><%= link_to 'Show', photo %></td>
-              <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-              <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
+          </div>
           <% end %>
-        </tbody>
-      </table>
-
-      <br>
-
-      <%= link_to 'New Photo', new_photo_path %> 
-<%
-=end%>
+        </div>
+    </div>
+  </section>
   </div>
 </div>

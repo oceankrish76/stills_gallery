@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Albumname:</strong>
-  <%= @album_type.albumname %>
-</p>
-
-<%= link_to 'Edit', edit_album_type_path(@album_type) %> |
-<%= link_to 'Back', album_types_path %>
+<div class="jumbotron vertical-center">
+  <div class="container conrainer-bg">
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>Album Name:</strong>
+      <%= @album_type.albumname %>
+    </p>
+    <%= link_to 'Edit', edit_album_type_path(@album_type) %> |
+    <%= link_to 'Back', album_types_path %>
+  </div>
+</div>

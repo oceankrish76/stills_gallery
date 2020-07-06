@@ -4,6 +4,6 @@ class Photo < ApplicationRecord
     #validates_attachment_content_type :image_content_type, :content_type => %w(image/jpeg image/jpg image/png image/gif)
     has_many :photo_attachments
     accepts_nested_attributes_for :photo_attachments
-
+    belongs_to :album_type
     has_many_attached :images
 end
